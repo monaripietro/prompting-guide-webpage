@@ -9,7 +9,7 @@ Questo progetto offre due strumenti potenti per imparare a comunicare efficaceme
 
 ## **1\. Il Sito Web (prompt\_engineering\_guide.html)**
 
-È una pagina web "tutto-in-uno" che guida l'utente da zero a esperto; puoi vederla online all'indirizzo <https://wwww.monaripietro.it/prompting>
+È una pagina web "tutto-in-uno" che guida l'utente da zero a esperto; puoi vederla online all'indirizzo <https://www.monaripietro.it/prompting>
 
 ### **Cosa contiene:**
 
