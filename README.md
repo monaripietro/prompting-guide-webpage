@@ -1,72 +1,82 @@
 # **Guida Interattiva al Prompt Engineering & AI Coach**
 
-**Benvenuto nel repository ufficiale del progetto educativo di Pietro Monari.**
+**Repository ufficiale del progetto educativo di Pietro Monari.**
 
-Questo progetto offre due strumenti potenti per imparare a comunicare efficacemente con l'Intelligenza Artificiale:
+Un sito statico in italiano che insegna a comunicare con l'intelligenza artificiale, diviso in tre pagine. Online all'indirizzo <https://www.monaripietro.it/prompting>.
 
-1. 🌐 **Sito Web Interattivo:** Una guida visiva e pratica con simulatore.  
-2. 🤖 **Prompt Coach:** Un set di istruzioni per trasformare ChatGPT (o qualsiasi LLM) nel tuo allenatore personale.
+## **Le tre pagine**
 
-## **1\. Il Sito Web (prompt\_engineering\_guide.html)**
+### **1. `index.html` — La guida, in tre livelli**
 
-È una pagina web "tutto-in-uno" che guida l'utente da zero a esperto; puoi vederla online all'indirizzo <https://www.monaripietro.it/prompting>
+Il percorso didattico vero e proprio, con i contenuti divisi in schede.
 
-### **Cosa contiene:**
+* **Livello Base:** i cinque blocchi di un prompt (Ruolo, Task, Contesto, Output, Regole) e i tre errori che lo rovinano.
+* **Livello Intermedio:** Few-Shot, Chain of Thought, Meta-Prompting, Prompt Interattivo, con una tabella che dice quale tecnica usare per quale problema.
+* **Livello Avanzato:** delimitatori strutturati, Reverse Meta-Prompting, differenze fra modelli Standard, Reasoning e Ibridi, più un esempio di prompt "a contratto" per la produzione.
+* **Simulatore:** confronto affiancato fra un prompt grezzo e la sua versione strutturata su quattro scenari. Gli output sono esempi scritti in anticipo, non risposte generate in tempo reale.
 
-* **Livello Base:** I fondamentali (Ruolo, Task, Contesto, Output) basati sugli "Appunti di sopravvivenza".  
-* **Livello Intermedio:** Tecniche di struttura (Few-Shot, Prompt Interattivo) e ragionamento (Chain of Thought).  
-* **Livello Avanzato:** Architetture complesse (Delimitatori, Reverse Meta-Prompting) e la differenza tra modelli Standard e Reasoning.  
-* **Simulatore di Prompt:** Un'area interattiva dove confrontare in tempo reale un prompt "debole" con uno "ottimizzato" in vari scenari (Email, Coding, Creatività).  
-* **🛡️ Laboratorio Security (Prompt Injection):** Una sezione nascosta (accessibile dal footer) che dimostra come l'IA può essere ingannata leggendo codice nascosto, metadati e attributi delle immagini.
+### **2. `prompt-injection.html` — Laboratorio di sicurezza**
 
-## **🏗️ Dietro le Quinte: Come è stato costruito il sito?**
+Pagina dedicata alla vulnerabilità che nasce dal fatto che, per un modello, istruzioni e dati sono la stessa cosa.
 
-*(Spiegazione per non-programmatori)*
+* **La causa:** perché il problema esiste e perché non è un bug che si corregge.
+* **Diretta e indiretta:** le due famiglie di attacco e chi ne è la vittima reale.
+* **Laboratorio con nove vettori reali,** piantati nel codice sorgente della pagina stessa: testo visibile, testo nascosto via CSS, commenti HTML, attributi `alt`, metadati, JSON-LD, caratteri Unicode invisibili, confusione di contesto ed esfiltrazione via immagine Markdown. Il simulatore legge davvero l'elemento corrispondente del DOM, e per ciascun vettore mostra il meccanismo e la contromisura.
+* **Difese,** divise per chi usa l'IA, chi scrive prompt e chi costruisce agenti, con una sezione esplicita su tre difese che sembrano funzionare e non bastano.
+* **Checklist** in cinque punti prima di mettere un assistente in produzione.
 
-Questo sito è una **Single Page Application (SPA)** contenuta in un unico file. Non serve installare nulla, basta aprirlo con un browser. Ecco la logica di costruzione spiegata semplice:
+> ⚠️ I payload di prompt injection vivono **solo** in questa pagina e nell'esemplare qui sotto, non nella home. È deliberato: tenerli nella `meta description` dell'homepage significherebbe avvelenare qualsiasi sintesi automatica dell'intero sito.
 
-### **1\. Lo Scheletro (HTML5)**
+### **3. `ukulele.html` — L'esemplare da laboratorio**
 
-L'HTML è la struttura della pagina. Abbiamo diviso il contenuto in "blocchi" logici (sezioni Base, Intermedio, Avanzato).
+Il laboratorio ha un limite didattico: si annuncia da solo, quindi un modello che lo legge è già allertato. Questa pagina no. È un articolo vero sulla storia dell'ukulele — la traversata del *Ravenscrag* nel 1879, i tre liutai di Madeira, il re Kalākaua, l'esposizione di San Francisco del 1915 — con **otto payload nascosti nel codice**, tutti puntati su un solo bersaglio: la richiesta *"riassumi questa pagina"* o *"di cosa parla questa pagina"*.
 
-* **Curiosità:** Abbiamo inserito volontariamente delle "trappole" nel codice (testo nascosto, metadati ingannevoli) per la sezione Security. Un utente umano non li vede, ma un'IA che legge il codice sì\!
+Ogni payload punta a un argomento falso **diverso** (paracadutismo, pasticceria, caldaie, api, criptovalute, monopattini, logistica, assicurazioni). La risposta del modello dice quindi da sola quale canale non era stato sanificato. La tabella di decodifica sta su `prompt-injection.html#esemplare`, che è anche da dove si raggiunge la pagina.
 
-### **2\. Il "Vestito" (Tailwind CSS)**
+Un riquadro in fondo all'articolo dichiara apertamente la natura dell'esemplare: il contenuto storico è autentico e i payload sono innocui.
 
-Invece di scrivere lunghi file di stile separati, abbiamo usato **Tailwind CSS**. È una tecnologia che permette di dare stile agli elementi usando delle "etichette" direttamente nell'HTML.
+### **4. `prompt-coach.html` — Il system prompt da copiare**
 
-* *Esempio:* Scrivendo class="text-red-500 font-bold", il testo diventa automaticamente rosso e grassetto. Questo rende il sito moderno e adattabile ai cellulari (responsive) senza scrivere codice complesso.
+Il System Prompt che trasforma ChatGPT, Claude o Gemini in un tutor di prompt engineering. Segue il principio dell'**alchimia empirica**: non dà mai la risposta pronta, ma fa costruire il prompt attraverso tre livelli di sfide adattive.
 
-### **3\. Il Cervello (JavaScript)**
+La pagina contiene il testo integrale con un pulsante di copia, le istruzioni per incollarlo nelle varie piattaforme e un esempio di scambio. Il file di riferimento resta **`prompt-coach-prompt.md`**, scaricabile dalla pagina.
 
-È la parte che rende il sito interattivo. Ecco cosa fa:
+## **🏗️ Com'è costruito**
 
-* **Gestione Schede:** Quando clicchi su "Intermedio", lo script nasconde la sezione "Base" e mostra quella "Intermedio" istantaneamente, senza ricaricare la pagina.  
-* **Il Simulatore:** Non stiamo interrogando veramente un'IA in tempo reale (sarebbe lento e costoso). Abbiamo creato un "dizionario" interno con scenari pre-scritti. Quando selezioni "Email", il sito recupera istantaneamente il testo "Bad" e "Good" associato a quello scenario e aggiorna lo schermo.  
-* **Il Security Lab:** Simula il comportamento di un crawler AI. Quando clicchi "Analizza Testo Nascosto", lo script va a leggere un elemento HTML che ha stile display:none (invisibile) e te lo mostra a schermo, simulando come un LLM estrae i dati.
+*(Spiegazione per non programmatori)*
 
-## **2\. Il Prompt Coach (prompt\_coach\_instruction.md)**
+Tre pagine HTML statiche che condividono due file in `assets/`. Non serve installare né compilare nulla: basta aprire `index.html` con un browser.
 
-Questo file contiene il **System Prompt** (le "istruzioni madri") per creare il tuo assistente personale.
+```
+index.html              → la guida a tre livelli + simulatore
+prompt-injection.html   → laboratorio sicurezza (contiene i vettori reali)
+ukulele.html            → esemplare: articolo autentico con 8 payload nascosti
+prompt-coach.html       → system prompt del coach, con copia negli appunti
+prompt-coach-prompt.md  → il coach come file di testo, sorgente di riferimento
+assets/site.css         → stili condivisi
+assets/site.js          → configurazione dei colori, icone, navigazione, copia
+assets/ukulele.svg      → illustrazione (il suo alt è uno dei vettori)
+```
 
-### **La Filosofia**
+### **Lo scheletro (HTML)**
 
-Il Coach è progettato seguendo il principio dell'**"Alchimia Empirica"**: non dà mai la risposta pronta. Ti costringe a ragionare attraverso 3 sfide di difficoltà crescente, adattandosi al tuo livello.
+Ogni pagina è un documento a sé, con la stessa barra di navigazione. Nella pagina sulla sicurezza sono state inserite di proposito delle "trappole" nel codice — testo nascosto, metadati ingannevoli, caratteri invisibili. Un utente umano non le vede, un'IA che legge il codice sì: è esattamente il punto della lezione.
 
-### **Come usarlo**
+### **Il vestito (Tailwind CSS)**
 
-1. Apri il file prompt\_coach\_instruction.md.  
-2. Copia tutto il testo.  
-3. Incollalo in una nuova chat di ChatGPT, Claude o Gemini (oppure nelle "Custom Instructions").  
-4. Inizia a chattare: il Coach ti guiderà passo dopo passo.
+Gli stili si scrivono come "etichette" direttamente nell'HTML: `class="text-red-500 font-bold"` rende il testo rosso e grassetto. Tailwind arriva da CDN, quindi serve una connessione a internet per vedere il sito nel suo aspetto definitivo. Il codice è scritto per non rompersi del tutto se il CDN non risponde: le schede dei livelli e il pulsante di copia continuano a funzionare.
+
+### **Il cervello (JavaScript)**
+
+* **Schede:** cliccando su "Intermedio" la sezione "Base" viene nascosta e l'altra mostrata, senza ricaricare la pagina. Il livello scelto finisce nell'indirizzo (`#intermedio`), così il link è condivisibile.
+* **Simulatore:** un dizionario interno con scenari già scritti. Nessuna chiamata a un'IA reale: sarebbe lenta, costosa e non riproducibile a scopo didattico.
+* **Laboratorio injection:** simula un crawler AI leggendo davvero gli elementi nascosti di questa stessa pagina — l'attributo `alt` dell'immagine, il commento HTML, i caratteri invisibili — e mostra cosa un modello ne ricaverebbe.
 
 ## **🚀 Come iniziare**
 
-1. Scarica il file .html e aprilo con Chrome, Edge o Safari.  
-2. Usa il file .md per addestrare la tua IA preferita.
+1. Scarica il repository e apri `index.html` con Chrome, Edge o Safari.
+2. Per il coach, apri `prompt-coach.html` e usa il pulsante di copia, oppure prendi direttamente `prompt-coach-prompt.md`.
 
-**Credits:**
+## **Credits**
 
-Progettato e Curato da **Pietro Monari**.
-
-Codice generato e ottimizzato con il supporto di **Gemini 3 Pro**.
+Progettato e curato da **Pietro Monari**.
