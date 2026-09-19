@@ -61,3 +61,15 @@ main[id], section[id] { scroll-margin-top: 5rem; }
 
 /* Console del laboratorio */
 .console-line { animation: fadeIn 0.2s ease-out; }
+
+/* Celle della tabella di decodifica che rimandano al vettore nel simulatore */
+.vector-jump {
+  text-align: left;
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.vector-jump:hover { color: #b91c1c; }
