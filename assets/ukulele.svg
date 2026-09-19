@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400" role="img" aria-label="Illustrazione di un ukulele soprano">
+  <g fill="none" stroke="#92400e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 150 C130 150 145 170 143 190 C141 205 130 212 130 222 C130 240 152 250 152 280 C152 320 128 345 100 345 C72 345 48 320 48 280 C48 250 70 240 70 222 C70 212 59 205 57 190 C55 170 70 150 100 150 Z" fill="#fef3c7"/>
+    <circle cx="100" cy="250" r="22" fill="#fffbeb"/>
+    <rect x="80" y="300" width="40" height="8" rx="2" fill="#fde68a"/>
+    <rect x="90" y="62" width="20" height="90" fill="#fde68a"/>
+    <rect x="80" y="26" width="40" height="40" rx="7" fill="#fef3c7"/>
+    <g stroke-width="2">
+      <path d="M90 84h20M90 104h20M90 124h20M90 144h20"/>
+    </g>
+    <g stroke-width="1.5" stroke="#b45309">
+      <path d="M94 32v272M98 32v272M102 32v272M106 32v272"/>
+    </g>
+    <g fill="#fde68a" stroke-width="2.5">
+      <circle cx="74" cy="38" r="5"/>
+      <circle cx="74" cy="54" r="5"/>
+      <circle cx="126" cy="38" r="5"/>
+      <circle cx="126" cy="54" r="5"/>
+    </g>
+  </g>
+</svg>

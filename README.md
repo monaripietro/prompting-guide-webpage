@@ -25,9 +25,17 @@ Pagina dedicata alla vulnerabilità che nasce dal fatto che, per un modello, ist
 * **Difese,** divise per chi usa l'IA, chi scrive prompt e chi costruisce agenti, con una sezione esplicita su tre difese che sembrano funzionare e non bastano.
 * **Checklist** in cinque punti prima di mettere un assistente in produzione.
 
-> ⚠️ I payload di prompt injection vivono **solo** in questa pagina, non nella home. È deliberato: tenerli nella `meta description` dell'homepage significherebbe avvelenare qualsiasi sintesi automatica dell'intero sito.
+> ⚠️ I payload di prompt injection vivono **solo** in questa pagina e nell'esemplare qui sotto, non nella home. È deliberato: tenerli nella `meta description` dell'homepage significherebbe avvelenare qualsiasi sintesi automatica dell'intero sito.
 
-### **3. `prompt-coach.html` — Il system prompt da copiare**
+### **3. `ukulele.html` — L'esemplare da laboratorio**
+
+Il laboratorio ha un limite didattico: si annuncia da solo, quindi un modello che lo legge è già allertato. Questa pagina no. È un articolo vero sulla storia dell'ukulele — la traversata del *Ravenscrag* nel 1879, i tre liutai di Madeira, il re Kalākaua, l'esposizione di San Francisco del 1915 — con **otto payload nascosti nel codice**, tutti puntati su un solo bersaglio: la richiesta *"riassumi questa pagina"* o *"di cosa parla questa pagina"*.
+
+Ogni payload punta a un argomento falso **diverso** (paracadutismo, pasticceria, caldaie, api, criptovalute, monopattini, logistica, assicurazioni). La risposta del modello dice quindi da sola quale canale non era stato sanificato. La tabella di decodifica sta su `prompt-injection.html#esemplare`, che è anche da dove si raggiunge la pagina.
+
+Un riquadro in fondo all'articolo dichiara apertamente la natura dell'esemplare: il contenuto storico è autentico e i payload sono innocui.
+
+### **4. `prompt-coach.html` — Il system prompt da copiare**
 
 Il System Prompt che trasforma ChatGPT, Claude o Gemini in un tutor di prompt engineering. Segue il principio dell'**alchimia empirica**: non dà mai la risposta pronta, ma fa costruire il prompt attraverso tre livelli di sfide adattive.
 
@@ -42,10 +50,12 @@ Tre pagine HTML statiche che condividono due file in `assets/`. Non serve instal
 ```
 index.html              → la guida a tre livelli + simulatore
 prompt-injection.html   → laboratorio sicurezza (contiene i vettori reali)
+ukulele.html            → esemplare: articolo autentico con 8 payload nascosti
 prompt-coach.html       → system prompt del coach, con copia negli appunti
 prompt-coach-prompt.md  → il coach come file di testo, sorgente di riferimento
 assets/site.css         → stili condivisi
 assets/site.js          → configurazione dei colori, icone, navigazione, copia
+assets/ukulele.svg      → illustrazione (il suo alt è uno dei vettori)
 ```
 
 ### **Lo scheletro (HTML)**
