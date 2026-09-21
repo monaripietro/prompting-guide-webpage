@@ -2,9 +2,9 @@
 
 **Repository ufficiale del progetto educativo di Pietro Monari.**
 
-Un sito statico in italiano che insegna a comunicare con l'intelligenza artificiale, diviso in tre pagine. Online all'indirizzo <https://www.monaripietro.it/prompting>.
+Un sito statico in italiano che insegna a comunicare con l'intelligenza artificiale, diviso in quattro pagine. Online all'indirizzo <https://prompting.monaripietro.it>.
 
-## **Le tre pagine**
+## **Le quattro pagine**
 
 ### **1. `index.html` — La guida, in tre livelli**
 
@@ -49,7 +49,7 @@ La pagina contiene il testo integrale con un pulsante di copia, le istruzioni pe
 
 *(Spiegazione per non programmatori)*
 
-Tre pagine HTML statiche che condividono due file in `assets/`. Non serve installare né compilare nulla: basta aprire `index.html` con un browser.
+Quattro pagine HTML statiche che condividono i file in `assets/`. Non serve installare né compilare nulla: basta aprire `index.html` con un browser.
 
 ```
 index.html              → la guida a tre livelli + simulatore
@@ -60,11 +60,13 @@ prompt-coach-prompt.md  → il coach come file di testo, sorgente di riferimento
 assets/site.css         → stili condivisi
 assets/site.js          → configurazione dei colori, icone, navigazione, copia
 assets/ukulele.svg      → illustrazione (il suo alt è uno dei vettori)
+CNAME                   → dominio personalizzato per GitHub Pages
+LICENSE
 ```
 
 ### **Lo scheletro (HTML)**
 
-Ogni pagina è un documento a sé, con la stessa barra di navigazione. Nella pagina sulla sicurezza sono state inserite di proposito delle "trappole" nel codice — testo nascosto, metadati ingannevoli, caratteri invisibili. Un utente umano non le vede, un'IA che legge il codice sì: è esattamente il punto della lezione.
+Ogni pagina è un documento a sé, con la stessa barra di navigazione. In due di esse — il laboratorio e l'esemplare sull'ukulele — sono state inserite di proposito delle "trappole" nel codice: testo nascosto, metadati ingannevoli, caratteri invisibili. Un utente umano non le vede, un'IA che legge il codice sì: è esattamente il punto della lezione.
 
 ### **Il vestito (Tailwind CSS)**
 
