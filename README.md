@@ -37,7 +37,11 @@ Un riquadro in fondo all'articolo dichiara apertamente la natura dell'esemplare:
 
 ### **4. `prompt-coach.html` — Il system prompt da copiare**
 
-Il System Prompt che trasforma ChatGPT, Claude o Gemini in un tutor di prompt engineering. Segue il principio dell'**alchimia empirica**: non dà mai la risposta pronta, ma fa costruire il prompt attraverso tre livelli di sfide adattive.
+Il System Prompt che trasforma ChatGPT, Claude o Gemini in un tutor di prompt engineering. Segue il principio dell'**alchimia empirica**: non dà mai la risposta pronta, ma fa costruire il prompt attraverso tre livelli.
+
+Il coach valuta il prompt dell'utente contro una **rubrica di domande** — i cinque elementi al livello 1, la tecnica adatta al livello 2, la separazione fra istruzioni e dati al livello 3 — e risponde in tre righe: cosa manca, perché è un problema, una sola azione da fare. Un livello è superato quando non manca più nulla. L'utente migliora sempre lo stesso prompt, così alla fine ha costruito un oggetto suo.
+
+È scritto per reggere anche su modelli piccoli o gratuiti: nessun contatore, nessuna tabella, nessuno stato da ricordare, un tetto di righe dichiarato e un esempio del turno di feedback dentro il prompt stesso. Se l'utente sbaglia due volte lo stesso elemento, riceve un modello da riempire per quel solo pezzo — serve a chi lo usa da solo, senza un docente accanto.
 
 La pagina contiene il testo integrale con un pulsante di copia, le istruzioni per incollarlo nelle varie piattaforme e un esempio di scambio. Il file di riferimento resta **`prompt-coach-prompt.md`**, scaricabile dalla pagina.
 
