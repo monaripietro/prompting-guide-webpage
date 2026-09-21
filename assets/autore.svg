@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Ritratto segnaposto dell'autore">
+  <circle cx="48" cy="48" r="48" fill="#1e3a8a"/>
+  <circle cx="48" cy="38" r="15" fill="#dbeafe"/>
+  <path d="M18 88a30 30 0 0 1 60 0z" fill="#dbeafe"/>
+</svg>

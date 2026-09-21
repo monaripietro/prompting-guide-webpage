@@ -2,7 +2,7 @@
 
 **Repository ufficiale del progetto educativo di Pietro Monari.**
 
-Un sito statico in italiano che insegna a comunicare con l'intelligenza artificiale, diviso in quattro pagine.
+Un sito statico in italiano che insegna a comunicare con l'intelligenza artificiale, diviso in quattro pagine. Online all'indirizzo <https://prompting.monaripietro.it>.
 
 ## **Le quattro pagine**
 
